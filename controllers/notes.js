@@ -43,7 +43,6 @@ export const createNote = async (newNote) => {
 // UPDATE AN Notes BY ID (PATCH)
 export const updateNote = async (updatedNote, id) => {
 	const {
-		id,
 		longitude,
 		latitude,
 		title,

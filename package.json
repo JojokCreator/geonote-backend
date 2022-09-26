@@ -5,15 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
-    "db:createEventsTable": "node -r dotenv/config ./db/scripts/createEventsTable.js",
-    "db:populateEventsTable": "node -r dotenv/config ./db/scripts/populateEventsTable.js",
-    "db:dropEventsTable": "node -r dotenv/config ./db/scripts/dropEventsTable.js"
+    "start": "nodemon -r dotenv/config index.js",
+    "db:createNotesTable": "node -r dotenv/config ./db/scripts/createNotesTable.js",
+    "db:populateNotesTable": "node -r dotenv/config ./db/scripts/populateNotesTable.js",
+    "db:dropNotesTable": "node -r dotenv/config ./db/scripts/dropNotesTable.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "pg": "^8.8.0"
   },

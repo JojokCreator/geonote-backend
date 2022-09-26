@@ -1,0 +1,10 @@
+DATABASE STRUCTURE
+
+id: (auto)
+longitude:
+latitude: 
+title:
+category
+img_url:
+description:
+user_email

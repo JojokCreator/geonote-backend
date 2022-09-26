@@ -1,0 +1,23 @@
+{
+  "name": "geonotebook-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "db:createEventsTable": "node -r dotenv/config ./db/scripts/createEventsTable.js",
+    "db:populateEventsTable": "node -r dotenv/config ./db/scripts/populateEventsTable.js",
+    "db:dropEventsTable": "node -r dotenv/config ./db/scripts/dropEventsTable.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

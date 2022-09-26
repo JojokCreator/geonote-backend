@@ -17,27 +17,34 @@ export const createNote = async (newNote) => {
 		description,
 		user_email,
 	} = newNote;
-	const data = await query(
-		`INSERT INTO notes (id,
-			longitude,
-			latitude, 
-			title,
-			category,
-			img_url,
-			description,
-			user_email) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING *;`,
-		[
-			id,
-			longitude,
-			latitude,
-			title,
-			category,
-			img_url,
-			description,
-			user_email,
-		]
-	);
-	return data.rows;
+
+	try {
+		const data = await query(
+			`INSERT INTO notes (
+				longitude,
+				latitude, 
+				title,
+				category,
+				img_url,
+				description,
+				user_email) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *;`,
+			[
+				
+				longitude,
+				latitude,
+				title,
+				category,
+				img_url,
+				description,
+				user_email,
+			]
+		);
+		console.log(data);
+		return data.rows;
+	} catch (error) {
+		console.log(error);
+	}
+	
 };
 
 // UPDATE AN Notes BY ID (PATCH)

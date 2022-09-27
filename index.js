@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-
+import { generateUploadURL } from './s3.js'
 import notesRoutes from './routes/notes.js';
 
 const app = express();
@@ -9,6 +9,11 @@ const PORT = process.env.PORT
 app.use(cors())
 app.use(express.json())
 
+app.get('/s3Url', (req, res) => {
+  const url = generateUploadURL()
+  res.send({ url })
+})
+
 app.use('/', notesRoutes);
 
 app.get('/', cors(), (req, res) => {
@@ -16,5 +21,7 @@ app.get('/', cors(), (req, res) => {
       message: 'Hello Welcome to Geonotebook server!',
   });
 });
+
+
 
 app.listen(PORT, () => console.log(`Server running on port: http://localhost:${PORT}`))

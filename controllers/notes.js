@@ -59,7 +59,7 @@ export const updateNote = async (updatedNote, id) => {
 		user_email,
 	} = updatedNote;
 	const NoteUpdate = await query(
-		`SELECT * FROM notes WHERE notes_id = ${id}`
+		`SELECT * FROM notes WHERE id = ${id}`
 	);
 	if (longitude) {
 		await query(
@@ -75,27 +75,27 @@ export const updateNote = async (updatedNote, id) => {
 	}
 
 	if (title) {
-		await query(`UPDATE notes SET title = $1 WHERE notes_id = ${id};`, [
+		await query(`UPDATE notes SET title = $1 WHERE id = ${id};`, [
 			title,
 		]);
 	}
 	if (category) {
-		await query(`UPDATE notes SET category = $1 WHERE notes_id = ${id};`, [
+		await query(`UPDATE notes SET category = $1 WHERE id = ${id};`, [
 			category,
 		]);
 	}
 	if (img_url) {
-		await query(`UPDATE notes SET img_url = $1 WHERE notes_id = ${id};`, [
+		await query(`UPDATE notes SET img_url = $1 WHERE id = ${id};`, [
 			img_url,
 		]);
 	}
 	if (description) {
-		await query(`UPDATE notes SET description = $1 WHERE notes_id = ${id};`, [
+		await query(`UPDATE notes SET description = $1 WHERE id = ${id};`, [
 			description,
 		]);
 	}
 	if (couser_emailst) {
-		await query(`UPDATE notes SET user_email = $1 WHERE notes_id = ${id};`, [user_email]);
+		await query(`UPDATE notes SET user_email = $1 WHERE id = ${id};`, [user_email]);
 	}
 	if (NoteUpdate) {
 		return NoteUpdate.rows;
@@ -104,14 +104,14 @@ export const updateNote = async (updatedNote, id) => {
 
 //Search by Notes ID (GET)
 export const getNoteById = async (id) => {
-	const data = await query(`SELECT * FROM notes WHERE notes_id = $1;`, [id]);
+	const data = await query(`SELECT * FROM notes WHERE id = $1;`, [id]);
 	return data.rows;
 };
 
 //Delete an Notes by id (DELETE)
 export async function deleteNote(id) {
 	const data = await query(
-		`DELETE FROM notes WHERE notes_id = $1 RETURNING *`,
+		`DELETE FROM notes WHERE id = $1 RETURNING *`,
 		[Number(id)]
 	);
 	return data.rows; a1

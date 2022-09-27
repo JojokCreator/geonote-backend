@@ -1,0 +1,27 @@
+POST http://localhost:5000/notes
+Content-Type: application/json
+
+{
+"longitude": "51.494720",
+"latitude": "-0.135278",
+"title": "Note here",
+"category": "action",
+"img_url": "http://image.jpg",
+"description": "This is description",
+"user_email": "heloo@gmail.com"
+}
+
+###
+
+GET http://localhost:5000/notes
+Content-Type: application/json
+
+###
+
+GET http://localhost:5000/notes/3
+Content-Type: application/json
+
+
+###
+DELETE http://localhost:5000/notes/15
+Content-Type: application/json

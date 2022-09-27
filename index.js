@@ -9,9 +9,9 @@ const PORT = process.env.PORT
 app.use(cors())
 app.use(express.json())
 
-app.get('/s3Url', (req, res) => {
-  const url = generateUploadURL()
-  res.send({ url })
+app.get('/s3Url', async (req, res) => {
+  const url = await generateUploadURL()
+  res.send({url})
 })
 
 app.use('/', notesRoutes);

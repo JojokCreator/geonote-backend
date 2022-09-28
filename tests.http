@@ -6,7 +6,7 @@ Content-Type: application/json
 "latitude": "-0.155278",
 "title": "Note here",
 "category": "action",
-"img_url": "https://cyclic-cyan-embarrassed-worm-eu-west-3.s3.eu-west-3.amazonaws.com/4ea9b7b8f3acc066c393dd246bb618ac",
+"img_url": "hello",
 "description": "This is description",
 "user_email": "heloo@gmail.com"
 }

@@ -30,3 +30,15 @@ export async function generateUploadURL() {
   console.log(uploadURL)
   return uploadURL
 }
+export async function generateSignedURL(url) {
+
+  const params = ({
+    Bucket: bucketName,
+    Key: url,
+    Expires: 10000
+  })
+  
+  const image_url = await s3.getSignedUrl('putObject', params)
+  console.log(image_url)
+  return image_url
+}

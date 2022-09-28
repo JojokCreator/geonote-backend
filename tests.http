@@ -2,11 +2,11 @@ POST http://localhost:5000/notes
 Content-Type: application/json
 
 {
-"longitude": "51.494720",
-"latitude": "-0.135278",
+"longitude": "51.594720",
+"latitude": "-0.155278",
 "title": "Note here",
 "category": "action",
-"img_url": "http://image.jpg",
+"img_url": "https://cyclic-cyan-embarrassed-worm-eu-west-3.s3.eu-west-3.amazonaws.com/4ea9b7b8f3acc066c393dd246bb618ac",
 "description": "This is description",
 "user_email": "heloo@gmail.com"
 }

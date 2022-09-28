@@ -1,5 +1,5 @@
 import { query } from "../db/index.js";
-
+import { generateSignedURL } from "../s3.js";
 //Gets all the notes from the database (GET)
 export const getNotes = async () => {
 	const data = await query(`SELECT * FROM notes;`);
@@ -7,7 +7,7 @@ export const getNotes = async () => {
 };
 //Creates a new Notes (POST)
 export const createNote = async (newNote) => {
-	const {
+	let {
 		id,
 		longitude,
 		latitude,
@@ -34,7 +34,7 @@ export const createNote = async (newNote) => {
 				latitude,
 				title,
 				category,
-				img_url,
+				img_url = await generateSignedURL(img_url),
 				description,
 				user_email,
 			]

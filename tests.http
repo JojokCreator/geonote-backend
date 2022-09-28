@@ -6,7 +6,7 @@ Content-Type: application/json
 "latitude": "-0.155278",
 "title": "Note here",
 "category": "action",
-"img_url": "hello",
+"img_url": "2ce35681abe44769151b6013fa4b05a0",
 "description": "This is description",
 "user_email": "heloo@gmail.com"
 }

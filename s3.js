@@ -27,8 +27,8 @@ export async function generateUploadURL() {
   })
   
   const uploadURL = await s3.getSignedUrlPromise('putObject', params)
-  console.log(imageName)
-  return imageName
+  console.log(uploadURL)
+  return uploadURL
 }
 export async function generateSignedURL(url) {
 

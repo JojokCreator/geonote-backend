@@ -1,4 +1,4 @@
-POST http://localhost:5000/notes
+POST https://cyan-embarrassed-worm.cyclic.app/notes
 Content-Type: application/json
 
 {
